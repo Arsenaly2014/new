@@ -1,0 +1,5421 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Api Documentation",
+        "version": "1.0",
+        "title": "Api Documentation",
+        "termsOfService": "urn:tos",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [{
+            "name": "auth-controller",
+            "description": "Auth Controller"
+        }, {
+            "name": "content-controller",
+            "description": "Content Controller"
+        }, {
+            "name": "enrollment-controller",
+            "description": "Enrollment Controller"
+        }, {
+            "name": "exam-controller",
+            "description": "Exam Controller"
+        }, {
+            "name": "form-submission-controller",
+            "description": "Form Submission Controller"
+        }, {
+            "name": "health-controller",
+            "description": "Health Controller"
+        }, {
+            "name": "language-controller",
+            "description": "Language Controller"
+        }, {
+            "name": "payment-call-back-controller",
+            "description": "Payment Call Back Controller"
+        }, {
+            "name": "payment-controller",
+            "description": "Payment Controller"
+        }, {
+            "name": "progress-controller",
+            "description": "Progress Controller"
+        }, {
+            "name": "report-data-migration-controller",
+            "description": "Report Data Migration Controller"
+        }, {
+            "name": "report-queuing-controller",
+            "description": "Report Queuing Controller"
+        }, {
+            "name": "sso-controller",
+            "description": "SSO Controller"
+        }, {
+            "name": "subscription-controller",
+            "description": "Subscription Controller"
+        }
+    ],
+    "paths": {
+        "/api/all/semester/gradeId": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getSemestersByGradeID",
+                "operationId": "getSemestersByGradeIDUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SemesterDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/all/semesters": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllSemesters",
+                "operationId": "getAllSemestersUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SemesterDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/all/subject/semesterId": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllSubjectsBySemesterID",
+                "operationId": "getAllSubjectsBySemesterIDUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubjectDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/allCourses": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllCourses",
+                "operationId": "getAllCoursesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CourseDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/allLOs/id": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllLOsByCourseId",
+                "operationId": "getAllLOsByCourseIdUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/LODto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/content/get/months/bySemesterId": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getMonthsBySemester",
+                "operationId": "getMonthsBySemesterUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/MonthDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/course/details": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getCourseDetails",
+                "operationId": "getCourseDetailsUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CourseDetailsDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/enrolled/course/details": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getCourseUserProgressDetails",
+                "operationId": "getCourseUserProgressDetailsUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CourseDetailsDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/exams/get/bySemesterId": {
+            "post": {
+                "tags": [
+                    "exam-controller"
+                ],
+                "summary": "getBySemesterId",
+                "operationId": "getBySemesterIdUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "examData",
+                        "description": "examData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GeneralExamDataDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/exams/get/details": {
+            "post": {
+                "tags": [
+                    "exam-controller"
+                ],
+                "summary": "getExamDetails",
+                "operationId": "getExamDetailsUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "examData",
+                        "description": "examData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/UserExamDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/exams/get/details/forJunior": {
+            "post": {
+                "tags": [
+                    "exam-controller"
+                ],
+                "summary": "getExamDetailsForJunior",
+                "operationId": "getExamDetailsForJuniorUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "examData",
+                        "description": "examData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JuniorUserExamDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/exams/get/months/bySemesterId": {
+            "post": {
+                "tags": [
+                    "exam-controller"
+                ],
+                "summary": "getMonthsBySemester",
+                "operationId": "getMonthsBySemesterUsingPOST_1",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/MonthDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/exams/submit/userAnswers": {
+            "post": {
+                "tags": [
+                    "exam-controller"
+                ],
+                "summary": "submitUserAnswers",
+                "operationId": "submitUserAnswersUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "examData",
+                        "description": "examData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/UserExamDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/exams/submit/userAnswers/forJunior": {
+            "post": {
+                "tags": [
+                    "exam-controller"
+                ],
+                "summary": "submitUserAnswersForJunior",
+                "operationId": "submitUserAnswersForJuniorUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "examData",
+                        "description": "examData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/JuniorUserExamDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/formSubmission/submit/partner": {
+            "post": {
+                "tags": [
+                    "form-submission-controller"
+                ],
+                "summary": "submitPartner",
+                "operationId": "submitPartnerUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "partnerData",
+                        "description": "partnerData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PartnerFormDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/formSubmission/submit/teacher": {
+            "post": {
+                "tags": [
+                    "form-submission-controller"
+                ],
+                "summary": "submitTeacher",
+                "operationId": "submitTeacherUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "teacherData",
+                        "description": "teacherData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TeacherFormDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/formSubmission/verify/recaptcha": {
+            "post": {
+                "tags": [
+                    "form-submission-controller"
+                ],
+                "summary": "verifyRecaptcha",
+                "operationId": "verifyRecaptchaUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "recaptchaData",
+                        "description": "recaptchaData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/VerifyRecaptchaResponseDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/get/filteredSubjects": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getFilteredSubjectList",
+                "operationId": "getFilteredSubjectListUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubjectDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/getAllSubjectByGradId": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllSubjectByGradeId",
+                "operationId": "getAllSubjectByGradeIdUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "gradeData",
+                        "description": "gradeData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubjectDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/getAllSubjects": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllSubject",
+                "operationId": "getAllSubjectUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "subjectData",
+                        "description": "subjectData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubjectDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/grades": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getAllGrades",
+                "operationId": "getAllGradesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GradeDataDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/grades/shortList": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getGradeShortList",
+                "operationId": "getGradeShortListUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GradeDataDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/health": {
+            "get": {
+                "tags": [
+                    "health-controller"
+                ],
+                "summary": "health",
+                "operationId": "healthUsingGET",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/invisible/subjectCoursesCurriculum": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getSubjectInvisibleCoursesCurriculum",
+                "operationId": "getSubjectInvisibleCoursesCurriculumUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CourseDetailsDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/invisible/subjectRevisions": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getSubjectInvisibleRevisions",
+                "operationId": "getSubjectInvisibleRevisionsUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SubjectDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/language/getAllLanguages": {
+            "post": {
+                "tags": [
+                    "language-controller"
+                ],
+                "summary": "getAllLanguages",
+                "operationId": "getAllLanguagesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "languageData",
+                        "description": "languageData",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/LanguageSubjectDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/myCourses": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getStudentEnrolledCourses",
+                "operationId": "getStudentEnrolledCoursesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CourseSubjectDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payment/fawryCallback": {
+            "post": {
+                "tags": [
+                    "payment-call-back-controller"
+                ],
+                "summary": "fawryCallBack",
+                "operationId": "fawryCallBackUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "confirmDto",
+                        "description": "confirmDto",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ConfirmFawryPaymentDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payment/upg/callback": {
+            "post": {
+                "tags": [
+                    "payment-call-back-controller"
+                ],
+                "summary": "upgCallBack",
+                "operationId": "upgCallBackUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "confirmDto",
+                        "description": "confirmDto",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ConfirmUPGPaymentDto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ConfirmUPGPaymentResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/allEnabledPaymentMethods": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "getAllEnabledPaymentMethods",
+                "operationId": "getAllEnabledPaymentMethodsUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/PaymentMethodDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/cancelPayment": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "cancelUpgPayment",
+                "operationId": "cancelUpgPaymentUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CancelPaymentResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/cancelPaymentWithReferenceNumber": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "cancelPaymentWithReferenceNumber",
+                "operationId": "cancelPaymentWithReferenceNumberUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/FawryServiceResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/generateQRCode": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "generateQRCode",
+                "operationId": "generateQRCodeUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/UPGServiceResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/hasPaymentTransaction": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "hasPaymentTransaction",
+                "operationId": "hasPaymentTransactionUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/HasPaymentTransactionResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/makeOfflinePayment": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "makeOfflinePayment",
+                "operationId": "makeOfflinePaymentUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SponsorshipPaymentResponseDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/makePayment": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "makePayment",
+                "operationId": "makePaymentUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentTransactionResponseDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/payWithCard": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "makeCardPayment",
+                "operationId": "makeCardPaymentUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/FawryServiceResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/payWithReferenceNumber": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "makeAtFawryPayment",
+                "operationId": "makeAtFawryPaymentUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/FawryServiceResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/requestToPay": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "requestToPay",
+                "operationId": "requestToPayUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/UPGR2PResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/payments/upgCheckStatus": {
+            "post": {
+                "tags": [
+                    "payment-controller"
+                ],
+                "summary": "upgCheckStatus",
+                "operationId": "upgCheckStatusUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/UPGCheckStatusResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/progress": {
+            "post": {
+                "tags": [
+                    "progress-controller"
+                ],
+                "summary": "setProgress",
+                "operationId": "setProgressUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GeneralResponseBody«boolean»"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/report/migration/payment/transaction": {
+            "post": {
+                "tags": [
+                    "report-data-migration-controller"
+                ],
+                "summary": "migratePaymentTransactionReportData",
+                "operationId": "migratePaymentTransactionReportDataUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/report/migration/userSubmittedMockExams": {
+            "post": {
+                "tags": [
+                    "report-data-migration-controller"
+                ],
+                "summary": "migrateUserSubmittedMockExamsReportDta",
+                "operationId": "migrateUserSubmittedMockExamsReportDtaUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/reportCourseVideos": {
+            "post": {
+                "tags": [
+                    "report-queuing-controller"
+                ],
+                "summary": "reportCourseVideos",
+                "operationId": "reportCourseVideosUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subjectCoursesCurriculum": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getSubjectCoursesCurriculum",
+                "operationId": "getSubjectCoursesCurriculumUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CourseDetailsDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subjectInfo": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getSubjectInfo",
+                "operationId": "getSubjectInfoUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SubjectInfoDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subjectRevisions": {
+            "post": {
+                "tags": [
+                    "content-controller"
+                ],
+                "summary": "getSubjectRevisions",
+                "operationId": "getSubjectRevisionsUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SubjectDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subscriptions/all": {
+            "post": {
+                "tags": [
+                    "subscription-controller"
+                ],
+                "summary": "getAllEnabledSubscirptionPlans",
+                "operationId": "getAllEnabledSubscirptionPlansUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubscriptionPlanDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subscriptions/getByGradeId": {
+            "post": {
+                "tags": [
+                    "subscription-controller"
+                ],
+                "summary": "getAllEnabledSubscirptionPlansByGradeId",
+                "operationId": "getAllEnabledSubscirptionPlansByGradeIdUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubscriptionPlanDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subscriptions/juniorsAnonymousUserPlans": {
+            "post": {
+                "tags": [
+                    "subscription-controller"
+                ],
+                "summary": "getJuniorsAnonymousUserPlans",
+                "operationId": "getJuniorsAnonymousUserPlansUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubscriptionPlanDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/subscriptions/juniorsPlansByGradeId": {
+            "post": {
+                "tags": [
+                    "subscription-controller"
+                ],
+                "summary": "getJuniorsPlansByGradeId",
+                "operationId": "getJuniorsPlansByGradeIdUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SubscriptionPlanDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/authorized": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "isAuthorized",
+                "operationId": "isAuthorizedUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ValidateStudentDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/course/view": {
+            "post": {
+                "tags": [
+                    "report-queuing-controller"
+                ],
+                "summary": "addUserCourseView",
+                "operationId": "addUserCourseViewUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/data": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "getStudentData",
+                "operationId": "getStudentDataUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/MoeStudentDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/enrollIn/allGrade/freeCourses": {
+            "post": {
+                "tags": [
+                    "enrollment-controller"
+                ],
+                "summary": "bulkEnrollStudentFreeCourses",
+                "operationId": "bulkEnrollStudentFreeCoursesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GeneralResponseBody«boolean»"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/enrollIn/one/course": {
+            "post": {
+                "tags": [
+                    "enrollment-controller"
+                ],
+                "summary": "enrollStudentInOneCourse",
+                "operationId": "enrollStudentInOneCourseUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GeneralResponseBody«boolean»"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/grades/all": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "getSeniorGrades",
+                "operationId": "getSeniorGradesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserGradeDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/grades/juniorsAll": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "getJuniorGrades",
+                "operationId": "getJuniorGradesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserGradeDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/languages/all": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "getSeniorLanguages",
+                "operationId": "getSeniorLanguagesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserLanguageDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/languages/juniorsAll": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "getJuniorLanguages",
+                "operationId": "getJuniorLanguagesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserLanguageDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/login": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "login",
+                "operationId": "loginUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/StudentLoginResponseDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/saml/acs": {
+            "post": {
+                "tags": [
+                    "sso-controller"
+                ],
+                "summary": "callback",
+                "operationId": "callbackUsingPOST",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "name": "relayState",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    }, {
+                        "name": "SAMLResponse",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/selectGrade": {
+            "post": {
+                "tags": [
+                    "enrollment-controller"
+                ],
+                "summary": "getStudentCourses",
+                "operationId": "getStudentCoursesUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GeneralResponseBody«boolean»"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/social/login": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "socialLogin",
+                "operationId": "socialLoginUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/StudentLoginResponseDto"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/subject/teachers": {
+            "post": {
+                "tags": [
+                    "enrollment-controller"
+                ],
+                "summary": "getTeacherDetailsBySubjectId",
+                "operationId": "getTeacherDetailsBySubjectIdUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/TeacherDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/tracks/gradeId": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "getGradeTracks",
+                "operationId": "getGradeTracksUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserTrackDto"
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/user/userInfo": {
+            "post": {
+                "tags": [
+                    "auth-controller"
+                ],
+                "summary": "saveUserInfo",
+                "operationId": "saveUserInfoUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/userAssessmentQuestionSubmission": {
+            "post": {
+                "tags": [
+                    "report-queuing-controller"
+                ],
+                "summary": "fireUserAssessmentQuestionSubmissionEvent",
+                "operationId": "fireUserAssessmentQuestionSubmissionEventUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/userPdfExamStarting": {
+            "post": {
+                "tags": [
+                    "report-queuing-controller"
+                ],
+                "summary": "fireUserPdfExamStartingEvent",
+                "operationId": "fireUserPdfExamStartingEventUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "token",
+                        "description": "token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "CancelPaymentResponse": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string"
+                },
+                "statusDescription": {
+                    "type": "string"
+                },
+                "transactionStatus": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "CancelPaymentResponse"
+        },
+        "ConfirmFawryPaymentDto": {
+            "type": "object",
+            "properties": {
+                "customerMail": {
+                    "type": "string"
+                },
+                "customerMobile": {
+                    "type": "string"
+                },
+                "fawryFees": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "fawryRefNumber": {
+                    "type": "string"
+                },
+                "merchantRefNumber": {
+                    "type": "string"
+                },
+                "messageSignature": {
+                    "type": "string"
+                },
+                "orderAmount": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "orderExpiryDate": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "orderStatus": {
+                    "type": "string"
+                },
+                "paymentAmount": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "paymentMethod": {
+                    "type": "string"
+                },
+                "requestId": {
+                    "type": "string"
+                }
+            },
+            "title": "ConfirmFawryPaymentDto"
+        },
+        "ConfirmUPGPaymentDto": {
+            "type": "object",
+            "properties": {
+                "ActionCode": {
+                    "type": "string"
+                },
+                "Amount": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "AuthorizationDateTime": {
+                    "type": "string"
+                },
+                "Currency": {
+                    "type": "string"
+                },
+                "DateTimeLocalTrxn": {
+                    "type": "string"
+                },
+                "MerchantId": {
+                    "type": "string"
+                },
+                "MerchantReference": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "NetworkReference": {
+                    "type": "string"
+                },
+                "PaidThrough": {
+                    "type": "string"
+                },
+                "PayerAccount": {
+                    "type": "string"
+                },
+                "PayerName": {
+                    "type": "string"
+                },
+                "Scheme": {
+                    "type": "string"
+                },
+                "SecureHash": {
+                    "type": "string"
+                },
+                "SystemReference": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "TerminalId": {
+                    "type": "string"
+                },
+                "TxnType": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "ConfirmUPGPaymentDto"
+        },
+        "ConfirmUPGPaymentResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            },
+            "title": "ConfirmUPGPaymentResponse"
+        },
+        "CourseDetailsDto": {
+            "type": "object",
+            "properties": {
+                "actualProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "assessment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/QuizDto"
+                    }
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "curriculum": {
+                    "$ref": "#/definitions/CurriculumDto"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "directionFlow": {
+                    "type": "string",
+                    "enum": [
+                        "LTR",
+                        "RTL"
+                    ]
+                },
+                "elapsedTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "exams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GeneralExamDataDto"
+                    }
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "gradeName": {
+                    "$ref": "#/definitions/NameDto"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "isEnrolled": {
+                    "type": "boolean"
+                },
+                "language": {
+                    "$ref": "#/definitions/Language"
+                },
+                "languageCode": {
+                    "type": "string"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "learningObjectives": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LearningObjectiveDto"
+                    }
+                },
+                "lessonsNo": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "percentageShare": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "progress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "providerId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "semesterId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "semesterName": {
+                    "type": "string"
+                },
+                "subjectId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "subjectName": {
+                    "type": "string"
+                },
+                "teachers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TeacherDto"
+                    }
+                },
+                "teachersIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "tracks": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "typeId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "videoId": {
+                    "type": "string"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "CourseDetailsDto"
+        },
+        "CourseDto": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "isEnrolled": {
+                    "type": "boolean"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "lessonsNo": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "subjectId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "teachers": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "title": {
+                    "type": "string"
+                },
+                "total_progress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "videoId": {
+                    "type": "string"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "CourseDto"
+        },
+        "CourseSubjectDto": {
+            "type": "object",
+            "properties": {
+                "courses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CourseUserDetailsDto"
+                    }
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "title": "CourseSubjectDto"
+        },
+        "CourseUserDetailsDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "gradeName": {
+                    "$ref": "#/definitions/NameDto"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "lessonsNo": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "subjectName": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "totalTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "title": "CourseUserDetailsDto"
+        },
+        "CurriculumDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "CurriculumDto"
+        },
+        "ExamSolutionVideo": {
+            "type": "object",
+            "properties": {
+                "courseId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "order": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "ExamSolutionVideo"
+        },
+        "ExamTypeDto": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "title": "ExamTypeDto"
+        },
+        "FawryServiceResponse": {
+            "type": "object",
+            "properties": {
+                "3ds": {
+                    "type": "boolean"
+                },
+                "merchantRefNumber": {
+                    "type": "string"
+                },
+                "redirectUrl": {
+                    "type": "string"
+                },
+                "referenceNumber": {
+                    "type": "string"
+                },
+                "statusCode": {
+                    "type": "string"
+                },
+                "statusDescription": {
+                    "type": "string"
+                },
+                "transactionStatus": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "FawryServiceResponse"
+        },
+        "GeneralExamDataDto": {
+            "type": "object",
+            "properties": {
+                "actualProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "courseId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "courseLevel": {
+                    "type": "boolean"
+                },
+                "elapsedTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "examType": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "month": {
+                    "$ref": "#/definitions/MonthDto"
+                },
+                "multiple": {
+                    "type": "boolean"
+                },
+                "pdfContent": {
+                    "type": "boolean"
+                },
+                "questionsNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "subjectId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "title": "GeneralExamDataDto"
+        },
+        "GeneralResponseBody«boolean»": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "boolean"
+                },
+                "dataList": {
+                    "type": "array",
+                    "items": {
+                        "type": "boolean"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "title": "GeneralResponseBody«boolean»"
+        },
+        "GeneralStatus": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "title": "GeneralStatus"
+        },
+        "GradeDataDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "$ref": "#/definitions/NameDto"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "semesters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SemesterDto"
+                    }
+                },
+                "title": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "GradeDataDto"
+        },
+        "HasPaymentTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "paymentMethodId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "referenceNumber": {
+                    "type": "string"
+                },
+                "transactionStatus": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "HasPaymentTransactionResponse"
+        },
+        "JuniorUserExamDto": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                },
+                "allowedTime": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "courseLevel": {
+                    "type": "boolean"
+                },
+                "createdAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "duration": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "fullyCorrected": {
+                    "type": "boolean"
+                },
+                "grade": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "guId": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "language": {
+                    "$ref": "#/definitions/LanguageDto"
+                },
+                "percentageShareRequired": {
+                    "type": "boolean"
+                },
+                "results": {
+                    "$ref": "#/definitions/UserExamResultsDto"
+                },
+                "semester": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "subExams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/JuniorUserSubExamDto"
+                    }
+                },
+                "taken": {
+                    "type": "boolean"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalScore": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "type": {
+                    "$ref": "#/definitions/ExamTypeDto"
+                },
+                "updatedAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "JuniorUserExamDto"
+        },
+        "JuniorUserSubExamDto": {
+            "type": "object",
+            "properties": {
+                "questions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UserQuestionDto"
+                    }
+                },
+                "subject": {
+                    "$ref": "#/definitions/LookUpDto"
+                }
+            },
+            "title": "JuniorUserSubExamDto"
+        },
+        "LODto": {
+            "type": "object",
+            "properties": {
+                "courseId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "order": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "percentageShare": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "LODto"
+        },
+        "Language": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "Language"
+        },
+        "LanguageDto": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "LanguageDto"
+        },
+        "LanguageSubjectDto": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "directionFlow": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "title": "LanguageSubjectDto"
+        },
+        "LearningObjectiveChildDto": {
+            "type": "object",
+            "properties": {
+                "actualProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "elapsedTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "learnObjId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "order": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "percentageShare": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "typeId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "LearningObjectiveChildDto"
+        },
+        "LearningObjectiveDto": {
+            "type": "object",
+            "properties": {
+                "actualProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LearningObjectiveChildDto"
+                    }
+                },
+                "courseId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "elapsedTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "order": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "percentageShare": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "LearningObjectiveDto"
+        },
+        "LookUpDto": {
+            "type": "object",
+            "properties": {
+                "arabicName": {
+                    "type": "string"
+                },
+                "englishName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "title": "LookUpDto"
+        },
+        "MoeStudentDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "isDeleted": {
+                    "type": "boolean"
+                },
+                "isVisible": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "officeToken": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "MoeStudentDto"
+        },
+        "MonthDto": {
+            "type": "object",
+            "properties": {
+                "arabicName": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "englishName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "MonthDto"
+        },
+        "NameDto": {
+            "type": "object",
+            "properties": {
+                "AR": {
+                    "type": "string"
+                },
+                "EN": {
+                    "type": "string"
+                }
+            },
+            "title": "NameDto"
+        },
+        "PartnerFormDto": {
+            "type": "object",
+            "properties": {
+                "companyEmail": {
+                    "type": "string"
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "companyPhone": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "$ref": "#/definitions/Timestamp"
+                }
+            },
+            "title": "PartnerFormDto"
+        },
+        "PaymentMethodDto": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "paymentMethodId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "PaymentMethodDto"
+        },
+        "PaymentTransactionDto": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "couponCode": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "gradeName": {
+                    "type": "string"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "languageName": {
+                    "type": "string"
+                },
+                "loginTypeId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "loginTypeName": {
+                    "type": "string"
+                },
+                "merchantReferenceNumber": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "nationalId": {
+                    "type": "string"
+                },
+                "paymentDate": {
+                    "type": "string"
+                },
+                "paymentMethodId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "paymentMethodName": {
+                    "type": "string"
+                },
+                "paymentTransactionId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "referenceNumber": {
+                    "type": "string"
+                },
+                "semesterName": {
+                    "type": "string"
+                },
+                "semsterId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "statusCode": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "statusDescription": {
+                    "type": "string"
+                },
+                "statusId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "statusName": {
+                    "type": "string"
+                },
+                "subscriptionPlanId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "subscriptionPlanName": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userName": {
+                    "type": "string"
+                }
+            },
+            "title": "PaymentTransactionDto"
+        },
+        "PaymentTransactionResponseDto": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "PaymentTransactionResponseDto"
+        },
+        "PrivilegeDto": {
+            "type": "object",
+            "properties": {
+                "all": {
+                    "type": "boolean"
+                },
+                "comment": {
+                    "type": "boolean"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "isDeleted": {
+                    "type": "boolean"
+                },
+                "isVisible": {
+                    "type": "boolean"
+                },
+                "read": {
+                    "type": "boolean"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "review": {
+                    "type": "boolean"
+                },
+                "subscriped": {
+                    "type": "boolean"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "write": {
+                    "type": "boolean"
+                }
+            },
+            "title": "PrivilegeDto"
+        },
+        "QuizDto": {
+            "type": "object",
+            "properties": {
+                "actualProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "elapsedTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "title": "QuizDto"
+        },
+        "SemesterDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "SemesterDto"
+        },
+        "SponsorshipPaymentResponseDto": {
+            "type": "object",
+            "properties": {
+                "paymentTransactionData": {
+                    "$ref": "#/definitions/PaymentTransactionDto"
+                },
+                "statusDescription": {
+                    "type": "string"
+                },
+                "transactionStatus": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "SponsorshipPaymentResponseDto"
+        },
+        "StudentLoginResponseDto": {
+            "type": "object",
+            "properties": {
+                "auth": {
+                    "$ref": "#/definitions/PrivilegeDto"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "isSubscribed": {
+                    "type": "boolean"
+                },
+                "loginType": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "semesterId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "subscriptionDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "subscriptionType": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userInfo": {
+                    "$ref": "#/definitions/UserInfoDto"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            },
+            "title": "StudentLoginResponseDto"
+        },
+        "SubjectDto": {
+            "type": "object",
+            "properties": {
+                "courses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CourseDto"
+                    }
+                },
+                "coursesCount": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "exams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GeneralExamDataDto"
+                    }
+                },
+                "generalStatus": {
+                    "$ref": "#/definitions/GeneralStatus"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "totalProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "SubjectDto"
+        },
+        "SubjectInfoDto": {
+            "type": "object",
+            "properties": {
+                "courseIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "courses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CourseDto"
+                    }
+                },
+                "coursesCount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "gradeName": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "revisionsCount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "schoolLanguages": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "semesterId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "semesterName": {
+                    "type": "string"
+                },
+                "totalProgress": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "tracks": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "visible": {
+                    "type": "boolean"
+                }
+            },
+            "title": "SubjectInfoDto"
+        },
+        "SubscriptionPlanDto": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "discountPrice": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "semesterId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "type": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "usdPrice": {
+                    "type": "number",
+                    "format": "double"
+                }
+            },
+            "title": "SubscriptionPlanDto"
+        },
+        "TeacherDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "isDeleted": {
+                    "type": "boolean"
+                },
+                "isVisible": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "releasedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "TeacherDto"
+        },
+        "TeacherFormDto": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "governorate": {
+                    "type": "string"
+                },
+                "grade": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "$ref": "#/definitions/Timestamp"
+                }
+            },
+            "title": "TeacherFormDto"
+        },
+        "Timestamp": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "day": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hours": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "minutes": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "month": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nanos": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "seconds": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "time": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "timezoneOffset": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "year": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "Timestamp"
+        },
+        "UPGCheckStatusResponse": {
+            "type": "object",
+            "properties": {
+                "AmountTrxn": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "IsPaid": {
+                    "type": "boolean"
+                },
+                "MerchantReference": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "NetworkReference": {
+                    "type": "string"
+                },
+                "PaidThrough": {
+                    "type": "string"
+                },
+                "Payer": {
+                    "type": "string"
+                },
+                "PayerName": {
+                    "type": "string"
+                },
+                "Scheme": {
+                    "type": "string"
+                },
+                "Success": {
+                    "type": "boolean"
+                },
+                "SystemReference": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SystemTxnId": {
+                    "type": "string"
+                },
+                "TxnDate": {
+                    "type": "string"
+                }
+            },
+            "title": "UPGCheckStatusResponse"
+        },
+        "UPGR2PResponse": {
+            "type": "object",
+            "properties": {
+                "ISOQR": {
+                    "type": "string"
+                },
+                "MName": {
+                    "type": "string"
+                },
+                "MerchantReference": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "ReceiverAccountNumber": {
+                    "type": "string"
+                },
+                "ReceiverName": {
+                    "type": "string"
+                },
+                "ReceiverScheme": {
+                    "type": "string"
+                },
+                "Success": {
+                    "type": "boolean"
+                },
+                "SystemReference": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TxnDate": {
+                    "type": "string"
+                },
+                "Validity": {
+                    "type": "string"
+                }
+            },
+            "title": "UPGR2PResponse"
+        },
+        "UPGServiceResponse": {
+            "type": "object",
+            "properties": {
+                "ISOQR": {
+                    "type": "string"
+                },
+                "IsTahweelQR": {
+                    "type": "boolean"
+                },
+                "IsmVisaQR": {
+                    "type": "boolean"
+                },
+                "MName": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Success": {
+                    "type": "boolean"
+                }
+            },
+            "title": "UPGServiceResponse"
+        },
+        "UserAnswerDto": {
+            "type": "object",
+            "properties": {
+                "answered": {
+                    "type": "boolean"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "customId": {
+                    "type": "string"
+                },
+                "guId": {
+                    "type": "string"
+                },
+                "hasImage": {
+                    "type": "boolean"
+                },
+                "htmlBody": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "isRight": {
+                    "type": "boolean"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "title": "UserAnswerDto"
+        },
+        "UserExamDto": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                },
+                "allowedTime": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "course": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "courseLevel": {
+                    "type": "boolean"
+                },
+                "createdAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "duration": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "examSolutionVideo": {
+                    "$ref": "#/definitions/ExamSolutionVideo"
+                },
+                "fullyCorrected": {
+                    "type": "boolean"
+                },
+                "grade": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "guId": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "language": {
+                    "$ref": "#/definitions/LanguageDto"
+                },
+                "learningObjectiveChildId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "percentageShareRequired": {
+                    "type": "boolean"
+                },
+                "questions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UserQuestionDto"
+                    }
+                },
+                "results": {
+                    "$ref": "#/definitions/UserExamResultsDto"
+                },
+                "semester": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "subject": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "taken": {
+                    "type": "boolean"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "totalScore": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "type": {
+                    "$ref": "#/definitions/ExamTypeDto"
+                },
+                "updatedAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "UserExamDto"
+        },
+        "UserExamResultsDto": {
+            "type": "object",
+            "properties": {
+                "correctAnswersNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "fullMark": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "percentage": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "totalAnswersNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "userMark": {
+                    "type": "number",
+                    "format": "float"
+                }
+            },
+            "title": "UserExamResultsDto"
+        },
+        "UserGradeDto": {
+            "type": "object",
+            "properties": {
+                "gradeName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "UserGradeDto"
+        },
+        "UserInfoDto": {
+            "type": "object",
+            "properties": {
+                "SSOEmail": {
+                    "type": "string"
+                },
+                "gradeId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "isSubscribed": {
+                    "type": "boolean"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "languageId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "trackId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userName": {
+                    "type": "string"
+                }
+            },
+            "title": "UserInfoDto"
+        },
+        "UserLanguageDto": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "languageName": {
+                    "type": "string"
+                }
+            },
+            "title": "UserLanguageDto"
+        },
+        "UserQuestionDto": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                },
+                "answer": {
+                    "type": "string"
+                },
+                "answered": {
+                    "type": "boolean"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "correct": {
+                    "type": "boolean"
+                },
+                "courseLevel": {
+                    "type": "boolean"
+                },
+                "createdAt": {
+                    "$ref": "#/definitions/Timestamp"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "guId": {
+                    "type": "string"
+                },
+                "hasHintImage": {
+                    "type": "boolean"
+                },
+                "hasImage": {
+                    "type": "boolean"
+                },
+                "hint": {
+                    "type": "string"
+                },
+                "htmlBody": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "order": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "possibleAnswers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UserAnswerDto"
+                    }
+                },
+                "questionProviderId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "rightAnswer": {
+                    "type": "string"
+                },
+                "score": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "subject": {
+                    "$ref": "#/definitions/LookUpDto"
+                },
+                "subjectId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "$ref": "#/definitions/Timestamp"
+                }
+            },
+            "title": "UserQuestionDto"
+        },
+        "UserTrackDto": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "trackName": {
+                    "type": "string"
+                }
+            },
+            "title": "UserTrackDto"
+        },
+        "ValidateStudentDto": {
+            "type": "object",
+            "properties": {
+                "auth": {
+                    "$ref": "#/definitions/PrivilegeDto"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "isSubscribed": {
+                    "type": "boolean"
+                },
+                "loginType": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "semesterId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "subscriptionDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "subscriptionType": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "userInfo": {
+                    "$ref": "#/definitions/UserInfoDto"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "valid": {
+                    "type": "boolean"
+                }
+            },
+            "title": "ValidateStudentDto"
+        },
+        "VerifyRecaptchaResponseDto": {
+            "type": "object",
+            "properties": {
+                "error-codes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            },
+            "title": "VerifyRecaptchaResponseDto"
+        }
+    }
+}
